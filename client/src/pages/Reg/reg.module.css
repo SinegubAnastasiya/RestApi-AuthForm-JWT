@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    h1 {
+        font: 500 23px Inter;
+        color: #12141A;
+    }
+
+    p {
+        font: 500 14px Inter;
+        color: #606778;
+    }  
+
+    .userInfo {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .textField {
+        width: 100%;
+    }
+
+    .button {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    .info p {
+        margin-top: 12px;
+    }
+}
