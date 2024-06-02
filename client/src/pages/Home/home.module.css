@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .img {
+        background-image: url('../../assets/image.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 600px;
+        height: 200px;
+    }
+
+    h1 {
+        font: 700 20px Inter;
+        color: #12141A;
+        margin-bottom: 16px;
+    }
+
+    p {
+        font: 400 10px Inter;
+        color: #606778;
+        width: 299px;
+    }
+}

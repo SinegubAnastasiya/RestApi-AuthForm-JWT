@@ -5,7 +5,6 @@ import Reg from './pages/Reg/Reg'
 import Home from './pages/Home/Home'
 
 function App() {
-
   return (
     <>
      <Routes>
