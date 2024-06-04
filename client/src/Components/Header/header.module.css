@@ -1,0 +1,16 @@
+.wrapper{
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        font: 400 16px Inter;
+        margin: 24px 0;
+    }
+
+    .line {
+        width: 100%;
+        border: 1.2px solid #E0E0E0;
+        margin-top: 20px;
+        margin-bottom: 154.5px;
+    }
+}

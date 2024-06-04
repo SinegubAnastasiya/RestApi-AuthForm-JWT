@@ -1,5 +1,14 @@
 const pool = require('../db')
 
+const authUserDB = async (email, password) => {
+  const client = await pool.connect()
+
+  const sql = 'SELECT * FROM users where email = $1 and password = $2'
+  const { rows } = await client.query(sql, [email, password])
+
+  return rows
+}
+
 async function createUserDB(name, surname, email, password) {
     const client = await pool.connect()
 
@@ -46,4 +55,4 @@ async function deleteUserDB(id) {
     return rows
 }
 
-module.exports = { createUserDB, deleteUserDB, getUserDB, getUserIdDB, updateUserByIdDB }
+module.exports = { createUserDB, deleteUserDB, getUserDB, getUserIdDB, updateUserByIdDB, authUserDB }

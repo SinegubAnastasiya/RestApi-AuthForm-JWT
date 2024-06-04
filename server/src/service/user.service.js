@@ -1,4 +1,11 @@
-const { createUserDB, deleteUserDB, getUserDB, getUserIdDB, updateUserByIdDB } = require('../repository/user.repository')
+const { createUserDB, deleteUserDB, getUserDB, getUserIdDB, updateUserByIdDB, authUserDB } = require('../repository/user.repository')
+
+async function authUser(email, password) {
+  const data = await authUserDB(email, password)
+  if (!data.length) throw new Error('Database is empty')
+
+  return data
+}
 
 async function createUser(name, surname, email, password) {
     const user = await createUserDB(name, surname, email, password)
@@ -32,4 +39,4 @@ const getUserId = async (id) => {
     return user;
   };
 
-module.exports = { createUser, deleteUser, getUser, getUserId, updateUserById }
+module.exports = { createUser, deleteUser, getUser, getUserId, updateUserById, authUser }

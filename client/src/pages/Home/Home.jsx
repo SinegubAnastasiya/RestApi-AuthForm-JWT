@@ -1,7 +1,9 @@
+import Header from '../../Components/Header/Header';
 import style from './home.module.css'
 
 function Home() {
     return <>
+        <Header />
         <div className={style.wrapper}>
             <div className={style.img}></div>
             <h1>Woohoo!</h1>

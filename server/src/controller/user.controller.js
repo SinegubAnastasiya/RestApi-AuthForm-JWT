@@ -1,7 +1,25 @@
 const express = require('express')
-const { createUser, deleteUser, getUser, getUserId, updateUserById } = require('../service/user.service')
+const { createUser, deleteUser, getUser, getUserId, updateUserById, authUser } = require('../service/user.service')
+const createToken = require('../helper/jwt')
 
 const router = express.Router()
+
+router.post('/auth', async (req, res) => {
+  try {
+      const { email, password } = req.body
+      await authUser(email, password)
+
+      const token = createToken()
+
+      res.cookie('accessToken', token, {
+        secure: true
+      })
+
+      res.status(200).send('success')
+  } catch (error) {
+      res.status(404).send(error.message)
+  }
+})
 
 router.post('/', async (req, res) => {
     try {
